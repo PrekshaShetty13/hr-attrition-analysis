@@ -138,10 +138,7 @@ Employees most likely to leave:
 
 ### Full Dashboard
 
-
-
-
-
+![Dashboard](Dashboard%20Screenshot.png)
 
 ### Department Attrition
 
@@ -213,8 +210,7 @@ I am an aspiring Data Analyst skilled in Python, SQL, and Power BI.
 This project demonstrates my ability to analyze real-world HR data
 and generate actionable business insights.
 
-📧 [prekshashetty135@gmail.com] 
-🐙 [https://github.com/PrekshaShetty13/profit-leakage-analysis]
+📧 [prekshashetty135@gmail.com] 🐙 [https://github.com/PrekshaShetty13/profit-leakage-analysis]
 
 ---
 
