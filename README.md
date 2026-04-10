@@ -1,39 +1,42 @@
-# 📊 Profit Leakage Analysis — Superstore Retail
+# 📊 HR Attrition Analysis — Employee Retention Insights
 
 ## 🔍 Problem Statement
-A retail company is generating strong sales numbers but struggling with low profits.
-The goal of this project is to find **why profit is leaking** despite good sales —
-and provide actionable business recommendations to fix it.
 
-> *"Companies don't fail because of low sales. They fail because of poor profit margins."*
+A company is facing employee attrition, leading to increased hiring costs,
+loss of productivity, and disruption in operations.
+
+The goal of this project is to identify **why employees are leaving** and
+provide actionable insights to improve retention strategies.
+
+> *"Employees don’t leave companies. They leave poor management, low pay, and bad work-life balance."*
 
 ---
 
 ## 🛠️ Tools Used
 
-| Tool | Purpose |
-|------|---------|
-| Python (Pandas, Matplotlib, Seaborn) | Data cleaning, EDA, visualizations |
-| MySQL | Business queries, structured data analysis |
-| Power BI | Interactive dashboard, business presentation |
+| Tool                                 | Purpose                                      |
+| ------------------------------------ | -------------------------------------------- |
+| Python (Pandas, Matplotlib, Seaborn) | Data cleaning, EDA, visualizations           |
+| MySQL                                | Business queries, structured data analysis   |
+| Power BI                             | Interactive dashboard, business presentation |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-profit-leakage-analysis/
+hr-attrition-analysis/
 │
-├── profit_leakage_analysis.ipynb      # Python EDA and analysis (Jupyter Notebook)
-├── profit_leakage_queries.sql         # All 10 business SQL queries
-├── Profit_Leakage_Dashboard.pbix      # Interactive Power BI dashboard
+├── hr_attrition_phase1.ipynb          # Python EDA and analysis
+├── hr_attrition_queries.sql           # SQL queries for business insights
+├── hr_attrition_dashboard.pbix        # Power BI dashboard
 │
-├── chart1_sales_vs_profit.png         # Sales vs Profit scatter plot
-├── chart2_discount_vs_profit.png      # Discount impact on profit
-├── chart3_profit_by_category.png      # Profit by category and sub-category
-├── chart4_regional_performance.png    # Regional sales vs profit
-├── chart5_loss_products.png           # Top 10 loss-making products
-├── Dashboard Screenshort.png          # Full Power BI dashboard screenshot
+├── chart1_attrition_overview.png      # Overall attrition distribution
+├── chart2_department_attrition.png    # Attrition rate by department
+├── chart3_overtime_attrition.png      # Overtime impact on attrition
+├── chart4_income_attrition.png        # Salary vs attrition
+├── chart5_satisfaction_attrition.png  # Job satisfaction impact
+├── Dashboard Screenshot.png           # Full Power BI dashboard
 │
 └── README.md
 ```
@@ -41,117 +44,178 @@ profit-leakage-analysis/
 ---
 
 ## 📊 Dataset
-- **Source:** Sample Superstore Dataset (Kaggle)
-- **Size:** 9,994 orders | 21 columns
-- **Period:** 2014 – 2017
-- **Key columns:** Sales, Profit, Discount, Category, Sub-Category, Region
+
+* **Source:** IBM HR Analytics Dataset (Kaggle)
+* **Size:** 1,470 employees | 35 columns
+* **Key columns:** Age, MonthlyIncome, JobRole, Department, OverTime, JobSatisfaction
 
 ---
 
 ## 🔎 Key Findings
 
-### 1. 🎯 Discount is Destroying Profit
-Orders with **40%+ discounts generate negative profit** on average.
-The company is selling products at a loss to offer heavy discounts.
+### 1. 🎯 Overall Attrition Problem
 
-| Discount Level | Avg Profit per Order |
-|---------------|---------------------|
-| No discount (0%) | Positive |
-| Low (1–20%) | Positive |
-| Medium (21–40%) | Low positive |
-| High (41–80%) | **Negative (LOSS)** |
+Out of 1470 employees:
 
-### 2. 🪑 Furniture Category is a Loss Maker
-Despite having significant sales volume, the **Furniture category has the lowest profit margin**.
-Sub-categories **Tables** and **Bookcases** consistently generate losses across all regions.
+* Employees Left: **237**
+* Attrition Rate: **16.12%**
 
-### 3. 🗺️ Central Region Underperforms
-The **Central region** has the highest average discount rate and the lowest profit margin
-among all four regions — West, East, Central, South.
+👉 Indicates a moderate attrition issue requiring attention
 
-### 4. 📦 Top Loss-Making Products
-10 specific products account for a large portion of total losses.
-Most of them have average discounts above 40% — confirming the discount problem.
+---
+
+### 2. 🏢 Department Analysis
+
+* Sales → **Highest attrition (~20.6%)**
+* Human Resources → ~19%
+* Research & Development → **Lowest (~13.8%)**
+
+👉 Sales department faces highest employee churn
+
+---
+
+### 3. ⏱️ Overtime Impact (CRITICAL)
+
+Employees working overtime are significantly more likely to leave:
+
+| Overtime | Attrition Rate |
+| -------- | -------------- |
+| No       | 10.4%          |
+| Yes      | **30.5%**      |
+
+👉 Overtime increases attrition by **~3x**
+
+---
+
+### 4. 💰 Salary Impact
+
+Attrition decreases as salary increases:
+
+| Salary Range     | Attrition Rate |
+| ---------------- | -------------- |
+| Low (0–3K)       | **28.6%**      |
+| Medium (3–6K)    | ~12.7%         |
+| High (6–10K)     | ~12.0%         |
+| Very High (10K+) | **8.9%**       |
+
+👉 Low salary is a major driver of attrition
+
+---
+
+### 5. 😊 Job Satisfaction Impact
+
+* Low satisfaction → **22.8% attrition**
+* Medium → ~16.4%
+* High → ~16.5%
+* Very High → **11.3%**
+
+👉 Employee satisfaction strongly affects retention
+
+---
+
+### 6. ⚠️ High-Risk Employees
+
+Employees most likely to leave:
+
+* Work overtime
+* Earn low salary
+* Have low job satisfaction
+* Early in their career
 
 ---
 
 ## 💡 Business Recommendations
 
-1. **Cap discounts at 20%** for all Furniture category products immediately
-2. **Evaluate Tables and Bookcases** sub-categories — reprice or discontinue
-3. **Audit Central region** sales incentive structure — reduce discount approvals
-4. **Shift marketing focus** to Technology category which has the highest profit margin
-5. **Set discount approval process** — any discount above 30% requires manager sign-off
+1. Reduce excessive overtime workload
+2. Improve employee engagement programs
+3. Increase salary for low-income employees
+4. Focus on retention of early-stage employees
+5. Monitor high-risk employees proactively
 
 ---
 
 ## 📈 Dashboard Preview
 
 ### Full Dashboard
-![Full Dashboard](Dashboard%20Screenshort.png)
 
-### Loss-Making Products Table
-![Loss Products](chart5_loss_products.png)
+
+
+
+
+
+### Department Attrition
+
+![Department](chart2_department_attrition.png)
 
 ---
 
 ## 🐍 Python Analysis — What Was Done
 
-- Loaded and cleaned 9,994 rows of retail data
-- Fixed data types, removed duplicates, engineered new columns
-- Performed 5 key analyses:
-  - Sales vs Profit scatter (identified loss-making orders)
-  - Discount bucket analysis (proved discount-profit relationship)
-  - Category and Sub-category profit breakdown
-  - Regional performance comparison
-  - Top 10 loss-making products identification
-- Generated 5 charts saved as PNG files
+* Loaded and cleaned HR dataset (1470 records)
+* Handled missing values and data types
+* Created new features (salary slabs, age groups)
+* Performed key analyses:
+
+  * Attrition distribution
+  * Department-wise attrition
+  * Overtime impact
+  * Salary vs attrition
+  * Job satisfaction analysis
+* Generated visualizations using Matplotlib & Seaborn
+
+---
 
 ## 🗄️ SQL Analysis — Key Queries
 
-- Overall business performance summary
-- Profit by Category and Sub-Category
-- Discount impact analysis using CASE statements
-- Regional breakdown with profit margin %
-- Top 10 loss products using HAVING clause
-- Year-over-year trend analysis
-- Combined Region + Sub-Category problem matrix (advanced query)
+* Overall attrition calculation
+* Department-wise attrition
+* Overtime impact analysis
+* Salary bracket analysis
+* Job satisfaction analysis
+* Risk profiling queries
+* Multi-dimensional analysis
 
 ---
 
 ## 🚀 How to Run This Project
 
 ### Python
+
 ```bash
 pip install pandas matplotlib seaborn jupyter
 jupyter notebook
-# Open profit_leakage_phase1.py and run each cell
+# Open hr_attrition_phase1.ipynb
 ```
+
+---
 
 ### SQL
+
 ```sql
 -- Open MySQL Workbench
--- Run profit_leakage_queries.sql
--- All queries work on superstore_db.superstore table
+-- Run hr_attrition_queries.sql
 ```
 
+---
+
 ### Power BI
+
 ```
-Open Profit_Leakage_Dashboard.pbix in Power BI Desktop
-Use slicers to filter by Category, Region, and Year
+Open hr_attrition_dashboard.pbix in Power BI Desktop
+Use slicers to filter by Department and Job Role
 ```
 
 ---
 
 ## 👤 About Me
-I am an aspiring Data Analyst skilled in Python, SQL, and Power BI.
-This project was built to demonstrate real-world business analysis skills
-using industry-standard tools.
 
-📧 [Your Email]
-💼 [Your LinkedIn URL]
-🐙 [Your GitHub URL]
+I am an aspiring Data Analyst skilled in Python, SQL, and Power BI.
+This project demonstrates my ability to analyze real-world HR data
+and generate actionable business insights.
+
+📧 [prekshashetty135@gmail.com] 
+🐙 [https://github.com/PrekshaShetty13/profit-leakage-analysis]
 
 ---
 
-*This project uses the publicly available Sample Superstore dataset from Kaggle.*
+*Dataset sourced from IBM HR Analytics (Kaggle)*
