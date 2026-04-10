@@ -138,7 +138,7 @@ Employees most likely to leave:
 
 ### Full Dashboard
 
-![Dashboard](Dashboard%20Screenshot.png)
+![Dashboard](DashboardScreenshot.png)
 
 ### Department Attrition
 
