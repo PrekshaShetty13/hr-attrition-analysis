@@ -16,7 +16,7 @@ provide actionable insights to improve retention strategies.
 
 | Tool                                 | Purpose                                      |
 | ------------------------------------ | -------------------------------------------- |
-| Python (Pandas, Matplotlib, Seaborn) | Data cleaning, EDA, visualizations           |
+| Python (Pandas, Matplotlib, Seaborn) | Data cleaning, EDA, ML modelling             |
 | MySQL                                | Business queries, structured data analysis   |
 | Power BI                             | Interactive dashboard, business presentation |
 
@@ -27,7 +27,8 @@ provide actionable insights to improve retention strategies.
 ```
 hr-attrition-analysis/
 │
-├── hr_attrition_phase1.ipynb          # Python EDA and analysis
+├── hr_attrition_phase1.ipynb        # Python EDA and analysis
+├── hr_attrition_phase2.ipynb # Machine Learning (Models & Predictions)
 ├── hr_attrition_queries.sql           # SQL queries for business insights
 ├── hr_attrition_dashboard.pbix        # Power BI dashboard
 │
@@ -36,6 +37,10 @@ hr-attrition-analysis/
 ├── chart3_overtime_attrition.png      # Overtime impact on attrition
 ├── chart4_income_attrition.png        # Salary vs attrition
 ├── chart5_satisfaction_attrition.png  # Job satisfaction impact
+├── chart6_confusion_matrix.png        # ML evaluation
+├── chart7_roc_curve.png               # Model comparison
+├── chart8_feature_importance.png      # Key drivers
+├── chart9_risk_distribution.png       # Risk segmentation
 ├── Dashboard Screenshot.png           # Full Power BI dashboard
 │
 └── README.md
