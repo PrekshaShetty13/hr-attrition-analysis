@@ -1,97 +1,155 @@
-📊 HR Attrition Analysis — Employee Retention Insights
+# 📊 HR Attrition Analysis — Employee Retention Insights
 
-🔍 Problem Statement
-A company is facing employee attrition, leading to increased hiring costs, loss of productivity, and disruption in operations.
+## 🔍 Problem Statement
 
-The goal of this project is to identify why employees are leaving and provide actionable insights to improve retention strategies.
+A company is facing employee attrition, leading to increased hiring costs,
+loss of productivity, and disruption in operations.
 
-Additionally, this project goes beyond analysis by building machine learning models to predict employee attrition risk.
+The goal of this project is to identify **why employees are leaving** and
+provide actionable insights to improve retention strategies.
 
-"Employees don’t leave companies. They leave poor management, low pay, and bad work-life balance."
+> *"Employees don’t leave companies. They leave poor management, low pay, and bad work-life balance."*
 
-🛠️ Tools Used
+---
 
-Tool	Purpose
-Python (Pandas, Matplotlib, Seaborn, Scikit-learn)	Data cleaning, EDA, ML modeling
-MySQL	Business queries, structured data analysis
-Power BI	Interactive dashboard, business presentation
+## 🛠️ Tools Used
 
-📁 Project Structure
+| Tool                                 | Purpose                                      |
+| ------------------------------------ | -------------------------------------------- |
+| Python (Pandas, Matplotlib, Seaborn) | Data cleaning, EDA, visualizations           |
+| MySQL                                | Business queries, structured data analysis   |
+| Power BI                             | Interactive dashboard, business presentation |
 
+---
+
+## 📁 Project Structure
+
+```
 hr-attrition-analysis/
 │
-├── hr_attrition_phase1.ipynb # Python EDA
-├── hr_attrition_phase2.ipynb # Machine Learning (Models & Predictions)
-├── hr_attrition_queries.sql # SQL analysis
-├── hr_attrition_dashboard.pbix # Power BI dashboard
+├── hr_attrition_phase1.ipynb          # Python EDA and analysis
+├── hr_attrition_queries.sql           # SQL queries for business insights
+├── hr_attrition_dashboard.pbix        # Power BI dashboard
 │
-├── chart1_attrition_overview.png
-├── chart2_department_attrition.png
-├── chart3_overtime_attrition.png
-├── chart4_income_attrition.png
-├── chart5_satisfaction_attrition.png
-├── chart6_confusion_matrix.png # ML evaluation
-├── chart7_roc_curve.png # Model comparison
-├── chart8_feature_importance.png # Key drivers
-├── chart9_risk_distribution.png # Risk segmentation
-├── Dashboard Screenshot.png
+├── chart1_attrition_overview.png      # Overall attrition distribution
+├── chart2_department_attrition.png    # Attrition rate by department
+├── chart3_overtime_attrition.png      # Overtime impact on attrition
+├── chart4_income_attrition.png        # Salary vs attrition
+├── chart5_satisfaction_attrition.png  # Job satisfaction impact
+├── Dashboard Screenshot.png           # Full Power BI dashboard
 │
 └── README.md
+```
 
-📊 Dataset
-Source: IBM HR Analytics Dataset (Kaggle)
-Size: 1,470 employees | 35 columns
+---
 
-Key columns:
-Age, MonthlyIncome, JobRole, Department, OverTime, JobSatisfaction
+## 📊 Dataset
 
-🔎 Key Findings
+* **Source:** IBM HR Analytics Dataset (Kaggle)
+* **Size:** 1,470 employees | 35 columns
+* **Key columns:** Age, MonthlyIncome, JobRole, Department, OverTime, JobSatisfaction
 
-🎯 Overall Attrition
-Employees Left: 237
-Attrition Rate: 16.12%
-🏢 Department Analysis
-Sales → ~20.6% (Highest)
-HR → ~19%
-R&D → ~13.8% (Lowest)
-⏱️ Overtime Impact
-No → 10.4%
-Yes → 30.5%
+---
 
-👉 Overtime increases attrition ~3x
+## 🔎 Key Findings
 
-💰 Salary Impact
-Low (0–3K) → 28.6%
-High (10K+) → 8.9%
+### 1. 🎯 Overall Attrition Problem
 
-👉 Low salary = major driver
+Out of 1470 employees:
 
-😊 Job Satisfaction
-Low → 22.8%
-Very High → 11.3%
+* Employees Left: **237**
+* Attrition Rate: **16.12%**
 
-👉 Satisfaction strongly affects retention
+👉 Indicates a moderate attrition issue requiring attention
 
-🤖 Machine Learning Analysis
+---
+
+### 2. 🏢 Department Analysis
+
+* Sales → **Highest attrition (~20.6%)**
+* Human Resources → ~19%
+* Research & Development → **Lowest (~13.8%)**
+
+👉 Sales department faces highest employee churn
+
+---
+
+### 3. ⏱️ Overtime Impact (CRITICAL)
+
+Employees working overtime are significantly more likely to leave:
+
+| Overtime | Attrition Rate |
+| -------- | -------------- |
+| No       | 10.4%          |
+| Yes      | **30.5%**      |
+
+👉 Overtime increases attrition by **~3x**
+
+---
+
+### 4. 💰 Salary Impact
+
+Attrition decreases as salary increases:
+
+| Salary Range     | Attrition Rate |
+| ---------------- | -------------- |
+| Low (0–3K)       | **28.6%**      |
+| Medium (3–6K)    | ~12.7%         |
+| High (6–10K)     | ~12.0%         |
+| Very High (10K+) | **8.9%**       |
+
+👉 Low salary is a major driver of attrition
+
+---
+
+### 5. 😊 Job Satisfaction Impact
+
+* Low satisfaction → **22.8% attrition**
+* Medium → ~16.4%
+* High → ~16.5%
+* Very High → **11.3%**
+
+👉 Employee satisfaction strongly affects retention
+
+---
+
+### 6. ⚠️ High-Risk Employees
+
+Employees most likely to leave:
+
+* Work overtime
+* Earn low salary
+* Have low job satisfaction
+* Early in their career
+
+---
+
+## 🤖 Machine Learning Analysis
 
 Models Used:
 
-Logistic Regression
-Random Forest
+* Logistic Regression
+* Random Forest
 
-📊 Model Performance
+---
 
-Logistic Regression AUC: 0.804
-Random Forest AUC: 0.784
+## 📊 Model Performance
+
+* Logistic Regression AUC: 0.804
+* Random Forest AUC: 0.784
 
 👉 Logistic Regression performs slightly better overall
 
-📉 Confusion Matrix Insights
+---
 
-Logistic Regression: Better balance
-Random Forest: High accuracy but misses some attrition cases
+## 📉 Confusion Matrix Insights
 
-🔥 Feature Importance (Top Drivers)
+* Logistic Regression: Better balance
+* Random Forest: High accuracy but misses some attrition cases
+
+---
+
+## 🔥 Feature Importance (Top Drivers)
 
 Monthly Income
 Age
@@ -101,24 +159,26 @@ Years at Company
 
 👉 Compensation + experience = strongest factors
 
-⚠️ Risk Segmentation
+## ⚠️ Risk Segmentation
 
 Employees categorized into:
 
-🔴 Critical Risk
-🟠 High Risk
-🟡 Medium Risk
-🟢 Low Risk
+* 🔴 Critical Risk
+* 🟠 High Risk
+* 🟡 Medium Risk
+* 🟢 Low Risk
 
 👉 Enables proactive HR intervention
 
-💡 Business Recommendations
+---
 
-Reduce excessive overtime
-Increase salaries for low-income employees
-Improve employee engagement
-Focus on early-career employees
-Monitor high-risk employees using ML predictions
+## 💡 Business Recommendations
+
+1. Reduce excessive overtime workload
+2. Improve employee engagement programs
+3. Increase salary for low-income employees
+4. Focus on retention of early-stage employees
+5. Monitor high-risk employees proactively
 
 ---
 
@@ -126,8 +186,7 @@ Monitor high-risk employees using ML predictions
 
 ### Full Dashboard
 
-<img width="1350" height="746" alt="image" src="https://github.com/user-attachments/assets/2386c9c5-6302-4e3f-a77c-b683b9100c3d" />
-
+![Dashboard](Dashboard%20Screenshort.png)
 
 ### Department Attrition
 
@@ -135,62 +194,77 @@ Monitor high-risk employees using ML predictions
 
 ---
 
-🐍 Python Analysis
+## 🐍 Python Analysis — What Was Done
 
-Data cleaning & preprocessing
-Feature engineering (salary slabs, age groups)
-Exploratory Data Analysis
-ML model building (Logistic + Random Forest)
-Model evaluation (Confusion Matrix, ROC Curve)
-Feature importance analysis
-Risk scoring system
-
-🗄️ SQL Analysis
-
-Attrition rate calculation
-Department-wise insights
-Overtime impact
-Salary segmentation
-Job satisfaction analysis
-Risk profiling
-
-📊 Power BI Dashboard
-
-KPI Cards (Attrition Rate, Total Employees)
-Department Analysis
-Job Role Insights
-Gender & Age Group Analysis
-Salary Analysis
-Interactive slicers
+* Data cleaning & preprocessing
+* Feature engineering (salary slabs, age groups)
+* Exploratory Data Analysis
+* ML model building (Logistic + Random Forest)
+* Model evaluation (Confusion Matrix, ROC Curve)
+* Feature importance analysis
+* Risk scoring system
 
 ---
 
-🚀 How to Run
+## 🗄️ SQL Analysis — Key Queries
 
-Python
-pip install pandas matplotlib seaborn scikit-learn jupyter
+* Overall attrition calculation
+* Department-wise attrition
+* Overtime impact analysis
+* Salary bracket analysis
+* Job satisfaction analysis
+* Risk profiling queries
+* Multi-dimensional analysis
+
+---
+
+## 📊 Power BI Dashboard
+
+* KPI Cards (Attrition Rate, Total Employees)
+* Department Analysis
+* Job Role Insights
+* Gender & Age Group Analysis
+* Salary Analysis
+* Interactive slicers
+
+---
+
+## 🚀 How to Run This Project
+
+### Python
+
+```bash
+pip install pandas matplotlib seaborn jupyter
 jupyter notebook
+# Open hr_attrition_phase1.ipynb
+```
 
-SQL
-Run hr_attrition_queries.sql in MySQL
+---
 
-Power BI
-Open hr_attrition_dashboard.pbix
+### SQL
 
-👤 About Me
+```sql
+-- Open MySQL Workbench
+-- Run hr_attrition_queries.sql
+```
 
-Aspiring Data Analyst skilled in SQL, Python, Excel, and Power BI.
+---
 
-This project demonstrates:
+### Power BI
 
-Business problem solving
-Data analysis
-Dashboard creation
-Machine learning for prediction
+```
+Open hr_attrition_dashboard.pbix in Power BI Desktop
+Use slicers to filter by Department and Job Role
+```
 
-📧 Contact
+---
 
-Email: prekshashetty135@gmail.com
-GitHub: https://github.com/PrekshaShetty13
+## 👤 About Me
 
-⭐ If you found this useful, consider giving a star
+I am an aspiring Data Analyst skilled in Python, SQL, and Power BI.
+This project demonstrates my ability to analyze real-world HR data
+and generate actionable business insights.
+
+---
+
+*Dataset sourced from IBM HR Analytics (Kaggle)*
