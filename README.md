@@ -28,7 +28,6 @@ provide actionable insights to improve retention strategies.
 hr-attrition-analysis/
 │
 ├── hr_attrition_phase1.ipynb        # Python EDA and analysis
-├── hr_attrition_phase2.ipynb # Machine Learning (Models & Predictions)
 ├── hr_attrition_queries.sql           # SQL queries for business insights
 ├── hr_attrition_dashboard.pbix        # Power BI dashboard
 │
@@ -37,10 +36,6 @@ hr-attrition-analysis/
 ├── chart3_overtime_attrition.png      # Overtime impact on attrition
 ├── chart4_income_attrition.png        # Salary vs attrition
 ├── chart5_satisfaction_attrition.png  # Job satisfaction impact
-├── chart6_confusion_matrix.png        # ML evaluation
-├── chart7_roc_curve.png               # Model comparison
-├── chart8_feature_importance.png      # Key drivers
-├── chart9_risk_distribution.png       # Risk segmentation
 ├── Dashboard Screenshot.png           # Full Power BI dashboard
 │
 └── README.md
@@ -129,54 +124,6 @@ Employees most likely to leave:
 
 ---
 
-## 🤖 Machine Learning Analysis
-
-Models Used:
-
-* Logistic Regression
-* Random Forest
-
----
-
-## 📊 Model Performance
-
-* Logistic Regression AUC: 0.804
-* Random Forest AUC: 0.784
-
-👉 Logistic Regression performs slightly better overall
-
----
-
-## 📉 Confusion Matrix Insights
-
-* Logistic Regression: Better balance
-* Random Forest: High accuracy but misses some attrition cases
-
----
-
-## 🔥 Feature Importance (Top Drivers)
-
-Monthly Income
-Age
-Total Working Years
-Salary Per Experience
-Years at Company
-
-👉 Compensation + experience = strongest factors
-
-## ⚠️ Risk Segmentation
-
-Employees categorized into:
-
-* 🔴 Critical Risk
-* 🟠 High Risk
-* 🟡 Medium Risk
-* 🟢 Low Risk
-
-👉 Enables proactive HR intervention
-
----
-
 ## 💡 Business Recommendations
 
 1. Reduce excessive overtime workload
@@ -204,8 +151,6 @@ Employees categorized into:
 * Data cleaning & preprocessing
 * Feature engineering (salary slabs, age groups)
 * Exploratory Data Analysis
-* ML model building (Logistic + Random Forest)
-* Model evaluation (Confusion Matrix, ROC Curve)
 * Feature importance analysis
 * Risk scoring system
 
